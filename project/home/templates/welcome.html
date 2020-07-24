@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME PAGE</title>
+</head>
+
+<body>
+    <h2>Welcomeeee homieee</h2>
+    <p>chekcout from here to <a href="/logout">Logout</a> right away</p>
+    {% for message in get_flashed_messages() %}
+    {{message}}
+    {% endfor %}
+</body>
+
+</html>
