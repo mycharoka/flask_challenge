@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session, flash
+from flask import Flask, render_template, redirect, url_for, request, session, flash, Blueprint
 from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
 
@@ -13,6 +13,9 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 
 # login required decorator
 from project.models import User, db
+from project.users.views import users_blueprint
+
+app.register_blueprint(users_blueprint)
 
 
 def login_required(needs):
